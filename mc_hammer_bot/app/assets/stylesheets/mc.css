@@ -1,15 +1,137 @@
+body {
+	background: #ccc;
+	background-image: url("old-worn-metal2.jpg");
+
+	color: white;
+	font-family: 'Special Elite';
+}
+
+h1 {
+	width: 250px;
+	margin: 30px auto 10px auto;
+	font-size: 30px;
+	text-align: center;
+	-webkit-transform: rotate(-2deg);
+	background-color: black;
+	padding: 8px 4px 4px 4px;
+	-webkit-box-shadow: 0px 0px 2px #000000;
+}
+
 .button-container {
 	width:282px;
-
+	margin: 30px auto;
+	background-image: url("old-worn-metal3.jpg");
+	border-radius: 5px;
+	padding: 10px;
+	border: 1px grey solid;
+	-webkit-box-shadow: 0px 0px 5px #000000;
 }
 
 .button {
 	float: left;
-	width: 90px;
-	height: 90px;
-	background-color: blue;
+	background-image: url("old-worn-metal.jpg");
+	width: 80px;
+	height: 80px;
 	margin: 2px;
-	text-align: centre;
-
+	padding: 5px;
+	color: white;
+	border-radius: 2px;
+	-webkit-box-shadow: inset 0px 0px 4px #FFFFFF, 0px 0px 4px #000000;
+}
+.button:hover {
+	cursor: pointer;
 }
 
+.forward {
+	background-image: url("arrow-F.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.stop {
+	background-image: url("stop.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.forward-left {
+	border-top-left-radius: 40px;
+	background-image: url("arrow-F-L.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+}
+
+.forward-right {
+	border-top-right-radius: 40px;
+	background-image: url("arrow-F-R.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+}
+
+.reverse {
+	background-image: url("arrow-R.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+}
+
+.reverse-left {
+	background-image: url("arrow-R-L.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-bottom-left-radius: 40px;
+	
+}
+
+.reverse-right {
+	background-image: url("arrow-R-R.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-bottom-right-radius: 40px;
+	
+}
+
+.strafe-left {
+	background-image: url("arrow-S-L.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+}
+
+.strafe-right {
+	background-image: url("arrow-S-R.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.rotate-left {
+	background-image: url("rotate-L.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-top: 10px;
+	margin-right: 95px;
+	border-radius: 80px;
+}
+
+.rotate-right {
+	background-image: url("rotate-R.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-top: 10px;
+	border-radius: 80px;
+}
+
+.evasive {
+	margin-top: 10px;
+	width: auto;
+	height: 60px;
+	text-align: center;
+	-webkit-text-stroke: 0.5px #505152;
+	color: #909090;
+}
+
+.clear {
+	clear: both;
+}

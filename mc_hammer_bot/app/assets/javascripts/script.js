@@ -1,6 +1,6 @@
 $(function() {
     
-  var url = "http://localhost:8071/motion-control/update";
+  var url = "http://192.168.1.54:8071/motion-control/update";
 
   $(".strafe-right").on("click", function(){
     console.log("Strafing Left");
@@ -84,22 +84,39 @@ $(function() {
 
     	var apiCall = function(data, logText) {
     		return function() {
-	    		$.ajax(url, {data: data, function(){console.log(logText)} } );
+	    		$.ajax(url, {data: data, dataType: "jsonp"}, function(){console.log(logText)});
     		};
     	};
 
 
 	    var maneuvers = [
-	    	apiCall({strafe:1}, "Strafe Right!");
-	    	apiCall({forward:1}, "Forward");
-	    	apiCall({forward:1}, "Forward");
-	    	apiCall({forward:1}, "Forward");
+	    	apiCall({strafe:1}, "Strafe Left!"),
+	    	apiCall({strafe:-1}, "Strafe Right!"),
+	    	apiCall({turn:1}, "Turn Left!"),
+	    	apiCall({turn:-1}, "Turn Right!"),
+	    	apiCall({forward:1}, "Forward!"),
+	    	apiCall({forward:-1}, "Reverse!"),
+	    	apiCall({turn:1, forward:1}, "Forward Left!!"),
+	    	apiCall({turn:-1, forward:1}, "Forward Right!!"),
+	    	apiCall({turn:1, forward:-1}, "Reverse Left!!"),
+	    	apiCall({turn:-1, forward:-1}, "Reverse Right!!"),
+
+	    	apiCall({strafe:1}, "Strafe Left!"),
+	    	apiCall({strafe:-1}, "Strafe Right!"),
+	    	apiCall({turn:1}, "Turn Left!"),
+	    	apiCall({turn:-1}, "Turn Right!"),
+	    	apiCall({forward:1}, "Forward!"),
+	    	apiCall({forward:-1}, "Reverse!"),
+	    	apiCall({turn:1, forward:1}, "Forward Left!!"),
+	    	apiCall({turn:-1, forward:1}, "Forward Right!!"),
+	    	apiCall({turn:1, forward:-1}, "Reverse Left!!"),
+	    	apiCall({turn:-1, forward:-1}, "Reverse Right!!"),
 
 	    ];
 
 	    var counter = function(){
 	    	var actualCounterInstance = function(){
-	    		maneuvers[math.rand(0, maneuvers.length-1)]();
+	    		maneuvers[Math.floor(Math.random(0) * maneuvers.length)]();
 	    	};
 	    	return actualCounterInstance;
 	    };
